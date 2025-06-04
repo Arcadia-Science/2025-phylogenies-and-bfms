@@ -48,12 +48,6 @@ The repository is organized into the following top-level directories:
 │       └── utils.R
 ├── data
 │   ├── cox1.tre
-│   ├── example_pfam_families
-│   │   ├── PF00001.fasta
-│   │   ├── PF00001.sto
-│   │   └── [200+ additional Pfam family files]
-│   └── clustering_results
-│       └── clustering_summary.csv
 ```
 
 ## Methods
@@ -65,7 +59,7 @@ The repository is organized into the following top-level directories:
 5. **fig5_analysis.ipynb**: Applies distance-based clustering to phylogenetic trees and calculates effective sequence ratios to quantify redundancy across >54,000 protein families.
 
 ## Compute Specifications
-All analyses were performed on macOS with R version 4.x and standard bioinformatics tools for sequence and phylogenetic analysis.
+All analyses were done on an Apple MacBook Pro running macOS Montery with 32GB RAM, 10 cores, and 1TB of storage.
 
 ## Contributing
 This is a research repository. For questions or collaboration inquiries, please contact the repository maintainers.
