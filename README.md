@@ -1,7 +1,7 @@
-# Phylogenies and Bayesian Finite Mixtures
+# Phylogenies and Biological Foundation Models
 
 ## Purpose
-This repository contains code and data for analyzing phylogenetic relationships and protein family clustering using Bayesian finite mixture models. The project investigates how phylogenetic diversity varies across protein families and examines the relationship between evolutionary history and protein functional domains.
+This repo contains code associated with the pub "Phylogenies and Biological Foundation Models".
 
 ## Installation and Setup
 This repository uses R and conda to manage software environments and installations. You can find operating system-specific instructions for installing miniconda [here](https://docs.conda.io/en/latest/miniconda.html). 
