@@ -6,22 +6,6 @@ This repo contains code associated with the pub "Phylogenies and Biological Foun
 ## Installation and Setup
 This repository uses R and conda to manage software environments and installations. You can find operating system-specific instructions for installing miniconda [here](https://docs.conda.io/en/latest/miniconda.html). 
 
-### R Dependencies
-The project requires the following R packages:
-- ape (phylogenetic analysis)
-- ggplot2 (visualization)
-- gridExtra (plot layouts)
-- Biostrings (sequence analysis)
-- arcadiathemeR (custom themes)
-- pracma (mathematical functions)
-- httr (HTTP requests)
-- jsonlite (JSON parsing)
-- parallel (parallel processing)
-- pbapply (progress bars)
-- dplyr (data manipulation)
-- tidyr (data tidying)
-- scales (plot scaling)
-
 ## Data
 
 ### Overview
