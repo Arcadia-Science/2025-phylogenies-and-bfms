@@ -3,7 +3,9 @@
 Extract all Newick trees from the Compara EMF file and save them to separate files.
 """
 
+from collections import Counter
 import os
+import re
 import gzip
 import argparse
 from tqdm import tqdm
@@ -19,7 +21,6 @@ def sanitize_filename(name):
         str: A sanitized filename
     """
     # Replace problematic characters with underscores
-    import re
     # Remove characters that are invalid in filenames
     sanitized = re.sub(r'[\\/*?:"<>|]', '_', name)
     # Replace spaces with underscores
@@ -50,7 +51,6 @@ def extract_protein_family_name(seq_ids, species_seqs):
     
     # If we found gene names, use the most common one
     if gene_names:
-        from collections import Counter
         name_counts = Counter(gene_names)
         most_common_name = name_counts.most_common(1)[0][0]
         return sanitize_filename(f"{most_common_name}")
@@ -77,7 +77,7 @@ def extract_protein_family_name(seq_ids, species_seqs):
     if seq_ids:
         return sanitize_filename(f"protein_{seq_ids[0]}")
     
-    # If all else fails, use a generic name with the family number
+    # If all else fails, use a generic name
     return "protein_family_unknown"
 
 def extract_trees(emf_file, output_dir, max_families=0, save_seq_ids=False):
@@ -129,7 +129,6 @@ def extract_trees(emf_file, output_dir, max_families=0, save_seq_ids=False):
                 if line.startswith("SEQ"):
                     parts = line.split()
                     if len(parts) >= 3:  # Make sure we have enough parts
-                        species = parts[1]    # Species name
                         seq_id = parts[2]     # The Ensembl protein ID
                         
                         # Store sequence ID for tree naming
