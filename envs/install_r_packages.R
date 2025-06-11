@@ -1,0 +1,6 @@
+install.packages("devtools", version = "2.4.5")
+install.packages("here", version = "1.0.1")
+install.packages("pracma", version = "2.4.4")
+install.packages("pbapply", version = "1.7.2")
+install.packages("BiocManager", version = "1.30.25")
+devtools::install_github("Arcadia-Science/arcadiathemeR", version = "0.1.0")
