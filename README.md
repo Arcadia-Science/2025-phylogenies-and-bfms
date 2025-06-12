@@ -9,7 +9,7 @@ This repository uses R and conda to manage software environments and installatio
 ## Data
 
 ### Overview
-The repository contains phylogenetic trees, protein family alignments, and clustering results for analyzing relationships between phylogenetic diversity and protein evolution.
+The repository contains code to collect the necessary data to reproduce analyses in the pub. Example Pfam protein families used in Figure 4 are available on [Zenodo](https://zenodo.org/records/15644457).
 
 ### Description of the folder structure
 The repository is organized into the following top-level directories:
