@@ -27,7 +27,8 @@ print(paste("Median age:", median(age_numeric, na.rm=TRUE), "MYA"))
 system('python3 code/utils/fig3_download_human_genes.py --gene_dir data/human_genes_dna')
 
 # Configuration 
-API_KEY <- "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"
+# Insert API key below
+API_KEY <- NULL
 URL <- "https://health.api.nvidia.com/v1/biology/arc/evo2-40b/generate"
 OUTPUT_DIR <- here("data/evo2_output")
 TEMP_DIR <- file.path(OUTPUT_DIR, "temp")
