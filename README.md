@@ -19,11 +19,11 @@ The repository is organized into the following top-level directories:
 
 ```
 ├── code
-│   ├── notebooks
-│   │   ├── fig1_analysis.ipynb
-│   │   ├── fig2_analysis.ipynb
-│   │   ├── fig3_analysis.ipynb
-│   │   └── fig4_analysis.ipynb
+│   ├── analysis
+│   │   ├── fig1_analysis.R
+│   │   ├── fig2_analysis.R
+│   │   ├── fig3_analysis.R
+│   │   └── fig4_analysis.R
 │   └── utils
 │       ├── fig2_extract_trees.py
 │       ├── fig3_download_human_genes.py
