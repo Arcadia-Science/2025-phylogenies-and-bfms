@@ -3,16 +3,20 @@ library(here)
 # Load required libraries and utility functions
 suppressMessages(source(here("code/utils/utils.R")))
 
-system('mkdir data/trees/')
-system('wget -P data/ https://ftp.ensembl.org/pub/release-114/emf/ensembl-compara/homologies/Compara.114.protein_default.nh.emf.gz')
+dir.create(here("data/trees"), showWarnings = FALSE, recursive = TRUE)
+emf_file <- here("data/Compara.114.protein_default.nh.emf.gz")
+download.file("https://ftp.ensembl.org/pub/release-114/emf/ensembl-compara/homologies/Compara.114.protein_default.nh.emf.gz",
+              destfile = emf_file)
 
-system('python3 code/utils/fig2_extract_trees.py --emf_file data/Compara.114.protein_default.nh.emf.gz --output_dir data/trees/')
+system(paste("python3", here("code/utils/fig2_extract_trees.py"),
+             "--emf_file", emf_file,
+             "--output_dir", here("data/trees")))
 
-# Set working directory
-setwd(here('data/trees/'))
+# Directory holding the extracted tree files
+tree_dir <- here("data/trees")
 
 # List all tree files (exclude taxonomy files)
-files <- list.files()
+files <- list.files(tree_dir, full.names = TRUE)
 
 print(paste("Total tree files found:", length(files)))
 print("First 10 files:")

@@ -26,9 +26,17 @@ print(paste("Median age:", median(age_numeric, na.rm=TRUE), "MYA"))
 
 system('python3 code/utils/fig3_download_human_genes.py --gene_dir data/human_genes_dna')
 
-# Configuration 
-# Insert API key below
-API_KEY <- NULL
+# Configuration
+# The Evo 2 API is served via NVIDIA's hosted endpoint. Obtain an API key from
+# https://build.nvidia.com/arc/evo2-40b and make it available to R by setting the
+# NVIDIA_API_KEY environment variable (e.g. in ~/.Renviron or via Sys.setenv())
+# before running this script.
+API_KEY <- Sys.getenv("NVIDIA_API_KEY")
+if (API_KEY == "") {
+  stop("NVIDIA_API_KEY environment variable is not set. ",
+       "Obtain a key from https://build.nvidia.com/arc/evo2-40b and set it ",
+       "with Sys.setenv(NVIDIA_API_KEY = \"<your-key>\") or in ~/.Renviron.")
+}
 URL <- "https://health.api.nvidia.com/v1/biology/arc/evo2-40b/generate"
 OUTPUT_DIR <- here("data/evo2_output")
 TEMP_DIR <- file.path(OUTPUT_DIR, "temp")
@@ -104,7 +112,7 @@ print("Combining results...")
 write.csv(results_df, here("mean_likelihoods.csv"), row.names = FALSE)
 print(paste("Results saved to", here("mean_likelihoods.csv")))
 
-likelihoods <- read.csv("~/Documents/Research/github/2025-evo2-gene-age/output/mean_likelihoods.csv")
+likelihoods <- read.csv(here("mean_likelihoods.csv"))
 
 # Clean up gene identifiers (extract base gene ID before underscore)
 original_ids <- likelihoods$gene_id[1:5]
