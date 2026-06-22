@@ -79,7 +79,9 @@ if (length(norm_hill) > 1) {
 
 print(paste("Final MSA dataset size:", length(norm_hill), "families"))
 
-system('./code/utils/fig4_cluster_fasta_directory.sh -d data/example_pfam_families/ -o data/example_pfam_families/clustering_results/')
+system(paste("bash", here("code/utils/fig4_cluster_fasta_directory.sh"),
+             "-d", here("data/example_pfam_families"),
+             "-o", here("data/example_pfam_families/clustering_results")))
 
 # Load MMseqs clustering results
 res <- read.csv(here("data/example_pfam_families/clustering_results/clustering_summary.csv"),

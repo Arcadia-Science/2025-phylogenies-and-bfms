@@ -27,7 +27,7 @@ import shutil
 from Bio import SeqIO
 
 # Default URL: Ensembl release 104 cDNA file for Homo sapiens (GRCh38 DNA sequences with annotations)
-DEFAULT_BULK_URL = "ftp://ftp.ensembl.org/pub/release-104/fasta/homo_sapiens/cdna/Homo_sapiens.GRCh38.cdna.all.fa.gz"
+DEFAULT_BULK_URL = "https://ftp.ensembl.org/pub/release-104/fasta/homo_sapiens/cdna/Homo_sapiens.GRCh38.cdna.all.fa.gz"
 DEFAULT_BULK_FILE = "bulk_human_genes_dna.fa.gz"
 DEFAULT_GENE_DIR = "human_genes_dna"
 
